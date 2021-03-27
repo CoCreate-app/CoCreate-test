@@ -43,25 +43,25 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # Auto Changog generator
            
-  docs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # docs:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
       
-      - name: update documentation
-        uses: CoCreate-app/CoCreate-docs@master
+  #     - name: update documentation
+  #       uses: CoCreate-app/CoCreate-docs@master
           
   
-  cdn:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # cdn:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
           
-      - name: upload cdn
-        uses: CoCreate-app/CoCreate-s3@master
-        with:
-          aws-key-id: ${{ secrets.AWSACCESSKEYID }}
-          aws-access-key: ${{ secrets.AWSSECERTACCESSKEY }}
-          source: './dist/CoCreate-boilerplate.min.js'
+  #     - name: upload cdn
+  #       uses: CoCreate-app/CoCreate-s3@master
+  #       with:
+  #         aws-key-id: ${{ secrets.AWSACCESSKEYID }}
+  #         aws-access-key: ${{ secrets.AWSSECERTACCESSKEY }}
+  #         source: './dist'
