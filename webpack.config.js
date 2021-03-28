@@ -14,6 +14,8 @@ log.info(__filename);
 
 // This is main configuration object.
 // Here you write different options and tell Webpack what to do
+// let version = require('./package.json').version;
+// log.info(version);
 module.exports = {
 
     // Path to your entry point. From this file Webpack will begin his work
@@ -25,12 +27,26 @@ module.exports = {
     // Path and filename of your result bundle.
     // Webpack will bundle all JavaScript into this file
     output: {
-        path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
         filename: isProduction ? '[name].min.js' : '[name].js',
+        // filename: (pathData) => {
+        //     if (isProduction) {
+        //         if (pathData.chunk.name === 'CoCreate')
+        //             // return `[name].${version}.min.js`;
+        //             return `[name].min.js`;
+        //         else
+        //             return '[name].min.js';
+        //     }
+        //     else
+        //         return isProduction ? '[name].min.js' : '[name].js';
+        // },
+
         libraryTarget: 'umd',
         libraryExport: 'default',
         library: 'CoCreate',
         globalObject: "this",
+        ...(isProduction ? { /*publicPath: 'https://cdn.cocreate.app/',*/ } : {}),
+
     },
     devServer: {
         hot: true,
@@ -43,6 +59,8 @@ module.exports = {
     // add source map
     ...(isProduction ? {} : { devtool: 'eval-source-map' }),
 
+    // todo: this will produce a large chunk file
+    // ...isProduction && {devtool: 'eval-source-map' },
 
     module: {
         rules: [{
@@ -60,7 +78,15 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                     { loader: 'style-loader', options: { injectType: 'linkTag' } },
-                    "file-loader"
+                    {
+                        loader: 'file-loader',
+                        // ...isProduction && {
+                        //     options: {
+                        //         outputPath: version,
+                        //     }
+                        // }
+                    }
+
                 ],
 
             },
@@ -98,7 +124,7 @@ module.exports = {
             enforceSizeThreshold: 50000,
             cacheGroups: {
                 defaultVendors: false,
-     
+
             },
         },
     },

@@ -1,67 +1,64 @@
 name: CI
-
-on:
+'on':
   push:
     branches:
-    - master
+      - master
   pull_request:
     branches:
-    - master
+      - master
   create:
     branches:
-    - master
-
+      - master
 jobs:
   about:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-          
       - name: Jaid/action-sync-node-meta
         uses: jaid/action-sync-node-meta@v1.4.0
         with:
-          direction: overwrite-github # default is overwrite-file
-          githubToken: ${{ secrets.GITHUB }}
-  
+          direction: overwrite-github
+          githubToken: '${{ secrets.GITHUB }}'
+          
   release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
         with:
-          # You can specify specifying version range for the extra plugins if you prefer.
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/npm
             @semantic-release/git
             @semantic-release/github
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # Auto Changog generator
-           
-  # docs:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-      
-  #     - name: update documentation
-  #       uses: CoCreate-app/CoCreate-docs@master
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
+        outputs:
+          new_release_version: '${{ steps.semantic.outputs.new_release_version }}'
           
-  
-  # cdn:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-          
-  #     - name: upload cdn
-  #       uses: CoCreate-app/CoCreate-s3@master
-  #       with:
-  #         aws-key-id: ${{ secrets.AWSACCESSKEYID }}
-  #         aws-access-key: ${{ secrets.AWSSECERTACCESSKEY }}
-  #         source: './dist'
+  cdn:
+    runs-on: ubuntu-latest
+    needs: release
+    if: '${{ needs.release.outputs.new_release_version }} == ''true'''
+    env:
+      VERSION: '${{ needs.release.outputs.new_release_version }}'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: setup nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.15.4
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - name: upload cdn
+        uses: CoCreate-app/CoCreate-s3@master
+        with:
+          aws-key-id: '${{ secrets.AWSACCESSKEYID }}'
+          aws-access-key: '${{ secrets.AWSSECERTACCESSKEY }}'
+          source: ./dist
+          destination: '${VERSION}/'
