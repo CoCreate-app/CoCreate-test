@@ -52,9 +52,9 @@ jobs:
         with:
           aws-key-id: '${{ secrets.AWSACCESSKEYID }}'
           aws-access-key: '${{ secrets.AWSSECERTACCESSKEY }}'
-          bucket: testcrudbucket
+          bucket: testcrudbucket/hey
           source: ./dist
           # destination: '/:${{env.VERSION}}'
-          destination: /hey
+          # destination: /hey
           acl: 'public-read'
           
