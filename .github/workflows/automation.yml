@@ -54,5 +54,5 @@ jobs:
           aws-access-key: '${{ secrets.AWSSECERTACCESSKEY }}'
           bucket: testcrudbucket
           source: ./dist
-          destination: /${{ env.VERSION }}
+          destination: "/$VERSION"
           acl: 'public-read'
