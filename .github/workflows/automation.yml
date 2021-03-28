@@ -57,6 +57,6 @@ jobs:
           bucket: testcrudbucket
           source: ./dist
           # destination: '/:${{env.VERSION}}'
-          destination: /hey
+          destination: /heyy
           acl: 'public-read'
           
