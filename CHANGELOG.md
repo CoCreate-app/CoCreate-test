@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/CoCreate-app/test/compare/v1.0.17...v1.0.18) (2021-03-28)
+
+
+### Bug Fixes
+
+* testing destination ([f0cc0a5](https://github.com/CoCreate-app/test/commit/f0cc0a54176ee5cd9f5b09a3e2770f475b6acf88))
+
 ## [1.0.17](https://github.com/CoCreate-app/test/compare/v1.0.16...v1.0.17) (2021-03-28)
 
 
