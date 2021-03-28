@@ -39,7 +39,7 @@ jobs:
     needs: release
     if: needs.release.outputs.new_release_version == 'true'
     env:
-      VERSION: '${{ needs.release.outputs.new_release_version }}'
+      VERSION: '${{ steps.semantic.outputs.new_release_version }}'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
