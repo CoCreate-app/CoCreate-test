@@ -31,12 +31,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/CoCreate-test.git"
+    "url": "git+https://github.com/CoCreate-app/test.git"
   },
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-test/issues"
+    "url": "https://github.com/CoCreate-app/test/issues"
   },
   "homepage": "https://cocreate.app/docs/test",
   "funding": {
