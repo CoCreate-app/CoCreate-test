@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      
 jobs:
   about:
     runs-on: ubuntu-latest
@@ -58,7 +59,7 @@ jobs:
     needs:
       - release
       - compile
-    if: '${{ needs.release.outputs.new_release_version }} == ''true'''
+    if: ${{ needs.release.outputs.new_release_version }} == 'true'
     env:
       VERSION: '${{ needs.release.outputs.new_release_version }}'
     steps:
@@ -70,4 +71,4 @@ jobs:
           aws-key-id: '${{ secrets.AWSACCESSKEYID }}'
           aws-access-key: '${{ secrets.AWSSECERTACCESSKEY }}'
           source: ./dist
-          destination: '${VERSION}/'
+          # destination: '${VERSION}/'
