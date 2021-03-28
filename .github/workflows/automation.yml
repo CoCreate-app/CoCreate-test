@@ -61,4 +61,3 @@ jobs:
           destination: '/${{env.VERSION}}'
           acl: 'public-read'
           
-
