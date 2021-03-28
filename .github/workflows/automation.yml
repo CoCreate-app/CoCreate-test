@@ -33,7 +33,8 @@ jobs:
           NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
     outputs:
       new_release_published: '${{ steps.semantic.outputs.new_release_published }}'
-      new_release_version: '${{ steps.semantic.nextRelease.gitTag}}'
+      # new_release_version: '${{ steps.semantic.nextRelease.gitTag}}'
+      new_release_version: '${nextRelease.version}'
   
   cdn:
     runs-on: ubuntu-latest
