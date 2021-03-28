@@ -25,7 +25,6 @@ jobs:
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
-        id: semantic
         with:
           # You can specify specifying version range for the extra plugins if you prefer.
           extra_plugins: |
@@ -34,7 +33,7 @@ jobs:
             @semantic-release/git
             @semantic-release/github
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Auto Changog generator
     # outputs:
     #   new_release_published: ${{ steps.semantic.outputs.new_release_published }}
@@ -42,7 +41,7 @@ jobs:
       
   cdn:
     runs-on: ubuntu-latest
-    needs: release
+    # needs: release
     # if: ${{ needs.release.outputs.new_release_version }} == 'true'
     steps:
       - name: Checkout

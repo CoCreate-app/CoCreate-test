@@ -1,9 +1,9 @@
 {
   "name": "@cocreate/test",
   "version": "1.0.0",
-  "description": "A simple boilerplate component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
+  "description": "A simple test component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
-    "boilerplate",
+    "test",
     "cocreate",
     "low-code-framework",
     "no-code-framework",
@@ -31,14 +31,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/CoCreate-boilerplate.git"
+    "url": "git+https://github.com/CoCreate-app/CoCreate-test.git"
   },
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-boilerplate/issues"
+    "url": "https://github.com/CoCreate-app/CoCreate-test/issues"
   },
-  "homepage": "https://cocreate.app/docs/boilerplate",
+  "homepage": "https://cocreate.app/docs/test",
   "funding": {
     "type": "GitHub Sponsors ❤",
     "url": "https://github.com/sponsors/CoCreate-app"
