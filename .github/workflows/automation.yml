@@ -4,8 +4,6 @@ name: CI
     branches:
       - master
 jobs:
-
-jobs:
   changelog:
     runs-on: ubuntu-latest
     steps:
