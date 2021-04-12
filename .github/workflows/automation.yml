@@ -35,7 +35,7 @@ jobs:
         with:
           add: './dist'
           author_name: frank pagan
-          author_email: mail@example.com
+          author_email: frank@cocreate.app
           branch: master
           message: 'add dist'
           pull_strategy: 'NO-PULL'
