@@ -24,8 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-          with:
-            token: '${{ secrets.PAT }}'
+        with:
+          token: '${{ secrets.PAT }}'
       - name: setup nodejs
         uses: actions/setup-node@v2
         with:
