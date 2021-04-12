@@ -33,6 +33,8 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: |
+          git config user.email "frank@cocreate.app"
+          git config user.name "frank pagan"
           git checkout master
           git commit -am "add dist bundle"
           git push origin master
