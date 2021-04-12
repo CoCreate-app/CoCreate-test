@@ -31,11 +31,24 @@ jobs:
         with:
           node-version: 14.15.4
       - run: yarn install
+      - uses: EndBug/add-and-commit@v7 
+        with:
+          add: './dist'
+          author_name: frank pagan
+          author_email: mail@example.com
+          branch: master
+          message: 'add dist'
+          pull_strategy: 'NO-PULL'
+          push: false
+          signoff: true
+
+
+    
       # - name: Setup tmate session
       #   uses: mxschmitt/action-tmate@v3
-      - run: yarn build
-      - run: git add ./dist
-      - run: git commit -m "add dist"
+      # - run: yarn build
+      # - run: git add ./dist
+      # - run: git commit -m "add dist"
 
 
   # about:
