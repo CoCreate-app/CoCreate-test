@@ -4,9 +4,26 @@ name: CI
     branches:
       - master
 jobs:
-  builddist:
+
+jobs:
+  changelog:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+
+      - name: setup nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'v10.16.0'
+          
+      - name: build production version
+        run: yarn install
+        run: yarn build
+  # builddist:
+  #   runs-on: ubuntu-latest
+  #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v2
   #     - name: setup nodejs
@@ -20,14 +37,6 @@ jobs:
   #     - run: git add ./dist
   #     - run: git commit -m "add dist"
 
-- name: setup nodejs
-uses: actions/setup-node@v2
-with:
-node-version: 'v14.15.4'
-
-- name: build production version
-run: yarn install
-run: yarn build
 
   # about:
   #   runs-on: ubuntu-latest
