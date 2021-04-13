@@ -33,7 +33,7 @@ jobs:
       - run: yarn install 
       - run: yarn build
       - run: |
-          git checkout .
+          git checkout ./yarn.lock
           git config user.email "frank@cocreate.app"
           git config user.name "frank pagan"
           git commit -am "add dist bundle"
