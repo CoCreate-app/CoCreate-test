@@ -32,13 +32,13 @@ jobs:
           node-version: 14.15.4
       - run: yarn install 
       - run: yarn build
-      - run: |
-          git add ./dist
-          git clean -f
-          git config user.email "frank@cocreate.app"
-          git config user.name "frank pagan"
-          git commit -a "add dist bundle"
-          git push origin master
+      - run: 
+      - run: git add ./dist
+      - run: git clean -f
+      - run: git config user.email "frank@cocreate.app"
+      - run: git config user.name "frank pagan"
+      - run: git commit -a "add dist bundle"
+      # - run: git push origin master
       
 
 
