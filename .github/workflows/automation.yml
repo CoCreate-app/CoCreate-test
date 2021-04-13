@@ -33,9 +33,9 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: |
+          git add ./dist
           git config user.email "frank@cocreate.app"
           git config user.name "frank pagan"
-          git add ./dist
           git commit -am "add dist bundle"
           git push origin master
       
