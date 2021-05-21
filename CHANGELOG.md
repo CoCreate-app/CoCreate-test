@@ -1,3 +1,11 @@
+## [1.0.23](https://github.com/CoCreate-app/test/compare/v1.0.22...v1.0.23) (2021-05-21)
+
+
+### Bug Fixes
+
+* text workflow ([7981907](https://github.com/CoCreate-app/test/commit/7981907ad26a06028c4c79b34721f66f2f7e8d01))
+* text workflow ([5ebcaac](https://github.com/CoCreate-app/test/commit/5ebcaac1a84f8345e82bebb3a0705f6eb4775a9e))
+
 ## [1.0.22](https://github.com/CoCreate-app/test/compare/v1.0.21...v1.0.22) (2021-04-13)
 
 
