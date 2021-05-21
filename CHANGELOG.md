@@ -1,3 +1,11 @@
+## [1.0.24](https://github.com/CoCreate-app/test/compare/v1.0.23...v1.0.24) (2021-05-21)
+
+
+### Bug Fixes
+
+* testing ([76fa695](https://github.com/CoCreate-app/test/commit/76fa69559f0ebbc34e2dca55d0454efa0b3f247f))
+* text automation ([21e6ad9](https://github.com/CoCreate-app/test/commit/21e6ad9426db02c8a66f93b0645840fc55123795))
+
 ## [1.0.23](https://github.com/CoCreate-app/test/compare/v1.0.22...v1.0.23) (2021-05-21)
 
 
