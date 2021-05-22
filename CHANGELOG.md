@@ -1,3 +1,17 @@
+## [1.0.29](https://github.com/CoCreate-app/test/compare/v1.0.28...v1.0.29) (2021-05-22)
+
+
+### Bug Fixes
+
+* update ([794685b](https://github.com/CoCreate-app/test/commit/794685b0a75d64bec2780831a4e725e7c6f70f8c))
+
+## [1.0.28](https://github.com/CoCreate-app/test/compare/v1.0.27...v1.0.28) (2021-05-21)
+
+
+### Bug Fixes
+
+* test ([dbd42ca](https://github.com/CoCreate-app/test/commit/dbd42ca6cc865bf0dfdbde2c59541261cf23d84e))
+
 ## [1.0.27](https://github.com/CoCreate-app/test/compare/v1.0.26...v1.0.27) (2021-05-21)
 
 
