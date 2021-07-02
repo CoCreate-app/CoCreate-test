@@ -1,6 +1,6 @@
 {
   "name": "@cocreate/test",
-  "version": "1.0.29",
+  "version": "1.0.2",
   "description": "A simple test component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
     "test",
@@ -27,16 +27,17 @@
     "start": "npx webpack --config webpack.config.js",
     "build": "NODE_ENV=production npx webpack --config webpack.config.js",
     "dev": "npx webpack --config webpack.config.js --watch",
-    "docs": "node ./node_modules/@cocreate/docs/src/index.js"
+    "docs": "node ./node_modules/@cocreate/docs/src/index.js",
+    "hosting": "node ./node_modules/@cocreate/hosting/src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/test.git"
+    "url": "git+https://github.com/CoCreate-app/CoCreate-test.git"
   },
   "author": "CoCreate LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/test/issues"
+    "url": "https://github.com/CoCreate-app/CoCreate-test/issues"
   },
   "homepage": "https://cocreate.app/docs/test",
   "funding": {
@@ -49,16 +50,17 @@
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
-    "webpack-log": "^3.0.1",
-    "file-loader": "^6.2.0",
-    "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.1.1"
+    "webpack-log": "^3.0.1"
   },
   "dependencies": {
-    "@cocreate/docs": "^1.0.3"
+    "@cocreate/docs": "^1.0.3",
+    "@cocreate/hosting": "^1.1.7"
   }
 }
