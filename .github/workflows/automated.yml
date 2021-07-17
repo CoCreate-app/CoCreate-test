@@ -5,7 +5,7 @@ name: Automated Workflow
       - master
 jobs:
   release:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -13,7 +13,7 @@ jobs:
         uses: cycjimmy/semantic-release-action@v2
         id: semantic
         with:
-          semantic_version: 17.4.3
+          # semantic_version: 17.4.3
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
