@@ -1,3 +1,12 @@
+## [1.0.34](https://github.com/CoCreate-app/CoCreate-test/compare/v1.0.33...v1.0.34) (2021-07-17)
+
+
+### Bug Fixes
+
+* test ([a3d5a31](https://github.com/CoCreate-app/CoCreate-test/commit/a3d5a31055bc4bf4190b4ab175d1c2ef3481c0df))
+* test ([e501501](https://github.com/CoCreate-app/CoCreate-test/commit/e501501288b63ddddb8f6a355f4e21b967d81384))
+* test ([eb3979a](https://github.com/CoCreate-app/CoCreate-test/commit/eb3979aacf620fe146102eefe4b0a50f7fcac73e))
+
 ## [1.0.33](https://github.com/CoCreate-app/CoCreate-test/compare/v1.0.32...v1.0.33) (2021-07-17)
 
 
